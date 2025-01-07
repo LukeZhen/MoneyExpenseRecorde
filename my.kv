@@ -1,0 +1,169 @@
+<MyGrid>:
+    amount: amount
+    day: day
+    spinner: spinner
+    total_label: total_label
+    
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1  # White background
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+    GridLayout:
+        cols: 2
+        size: root.width, root.height
+        padding: [20, 20]    # Space around edges
+        spacing: 20          # Space between columns
+
+        # --- LEFT COLUMN: Data Entry & Category Totals ---
+        BoxLayout:
+            orientation: 'vertical'
+            spacing: 15
+
+            # Title Label
+            Label:
+                text: "Expense Entry"
+                font_size: '24sp'
+                bold: True
+                color: 0, 0.4, 0.8, 1  # Blue text
+                size_hint_y: None
+                height: self.texture_size[1] + 15
+
+            # Grid for Input Fields
+            GridLayout:
+                cols: 2
+                row_default_height: '40dp'
+                row_force_default: True
+                spacing: 10
+                padding: [10, 10]
+
+                Label:
+                    text: "Amount:"
+                    color: 0, 0.4, 0.8, 1  # Blue text
+                TextInput:
+                    id: amount
+                    multiline: False
+                    hint_text: "Enter amount"
+                    background_color: 0.9, 0.9, 0.9, 1
+
+                Label:
+                    text: "Day:"
+                    color: 0, 0.4, 0.8, 1  # Blue text
+                TextInput:
+                    id: day
+                    multiline: False
+                    hint_text: "Enter day"
+                    background_color: 0.9, 0.9, 0.9, 1
+
+                Label:
+                    text: "Reason:"
+                    color: 0, 0.4, 0.8, 1  # Blue text
+                Spinner:
+                    id: spinner
+                    text: "Select Option"
+                    values: ["Food", "Entertainment", "Internet Service"]
+                    background_color: 0.9, 0.9, 0.9, 1
+                    size_hint: (1, None)
+                    height: 44
+
+            # Buttons for Entering Data & Showing Monthly Total
+            BoxLayout:
+                orientation: 'horizontal'
+                size_hint_y: None
+                height: '50dp'
+                spacing: 10
+
+                Button:
+                    text: "Enter"
+                    background_color: 0, 0.4, 0.8, 1  # Blue button
+                    color: 1, 1, 1, 1  # White text
+                    on_press: root.btn()
+
+                Button:
+                    id: total_label
+                    text: "Show Total"
+                    background_color: 0, 0.4, 0.8, 1  # Blue button
+                    color: 1, 1, 1, 1  # White text
+                    on_press: root.show_total()
+
+            # Label to Display the Current Month's Total
+            Label:
+                id: total_label
+                text: "Total This Month: 0"
+                font_size: '16sp'
+                bold: True
+                color: 0, 0.4, 0.8, 1  # Blue text
+                size_hint_y: None
+                height: self.texture_size[1] + 10
+
+            # Heading for Category Totals
+            Label:
+                text: "Category Totals"
+                font_size: '20sp'
+                bold: True
+                color: 0, 0.4, 0.8, 1  # Blue text
+                size_hint_y: None
+                height: self.texture_size[1] + 10
+
+            # Buttons for Category Totals
+            GridLayout:
+                cols: 3
+                row_default_height: '40dp'
+                row_force_default: True
+                spacing: 10
+                size_hint_y: None
+                height: '50dp'
+
+                Button:
+                    text: "Food"
+                    background_color: 0.8, 0.9, 1, 1  # Light blue button
+                    color: 0, 0.4, 0.8, 1  # Blue text
+                    on_press: root.show_food_total()
+
+                Button:
+                    text: "Entertainment"
+                    background_color: 0.8, 0.9, 1, 1  # Light blue button
+                    color: 0, 0.4, 0.8, 1  # Blue text
+                    on_press: root.show_entertainment_total()
+
+                Button:
+                    text: "Service"
+                    background_color: 0.8, 0.9, 1, 1  # Light blue button
+                    color: 0, 0.4, 0.8, 1  # Blue text
+                    on_press: root.show_internet_total()
+
+        # --- RIGHT COLUMN: Charts ---
+        BoxLayout:
+            orientation: 'vertical'
+            spacing: 15
+
+            Label:
+                text: "Charts"
+                font_size: '24sp'
+                bold: True
+                color: 0, 0.4, 0.8, 1  # Blue text
+                size_hint_y: None
+                height: self.texture_size[1] + 15
+
+            # Buttons for Monthly & Yearly Charts
+            GridLayout:
+                cols: 1
+                row_default_height: '50dp'
+                row_force_default: True
+                spacing: 15
+                size_hint_y: None
+                height: '130dp'
+
+                Button:
+                    text: "Show Monthly Chart"
+                    background_color: 0, 0.4, 0.8, 1  # Blue button
+                    color: 1, 1, 1, 1  # White text
+                    on_press: root.show_monthly_chart()
+
+                Button:
+                    text: "Show Yearly Chart"
+                    background_color: 0, 0.4, 0.8, 1  # Blue button
+                    color: 1, 1, 1, 1  # White text
+                    on_press: root.show_yearly_chart()

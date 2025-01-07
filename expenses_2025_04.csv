@@ -1,0 +1,51 @@
+Amount,Day,Reason
+120,1,Food
+55,2,Entertainment
+45,3,Internet Service
+95,4,Food
+130,5,Food
+75,6,Entertainment
+190,7,Internet Service
+25,8,Food
+160,9,Entertainment
+40,10,Food
+200,11,Food
+70,12,Internet Service
+30,13,Internet Service
+140,14,Food
+100,15,Entertainment
+85,16,Food
+55,17,Internet Service
+180,18,Food
+60,19,Food
+45,20,Entertainment
+135,21,Internet Service
+50,22,Food
+95,23,Food
+105,24,Entertainment
+170,25,Food
+20,26,Food
+65,27,Internet Service
+40,28,Entertainment
+200,29,Internet Service
+90,30,Food
+115,31,Internet Service
+60,1,Entertainment
+75,3,Food
+45,3,Food
+100,6,Food
+35,7,Entertainment
+150,10,Internet Service
+85,13,Food
+40,14,Entertainment
+95,17,Food
+135,19,Internet Service
+75,20,Internet Service
+50,22,Entertainment
+180,24,Food
+30,25,Internet Service
+40,27,Food
+65,29,Food
+90,30,Internet Service
+55,31,Food
+70,31,Entertainment
